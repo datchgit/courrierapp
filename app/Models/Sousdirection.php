@@ -14,4 +14,15 @@ class Sousdirection extends Model
     public function services(){
         return $this->hasMany(Service::class);
     }
+
+
+    public function courriers(){
+        return $this->belongsToMany(Courrier::class,'courrier_sousdirection','sousdirection_id', 'courrier_id')
+        ->withPivot('expediteur', 'operation','libelle','service','destinataire','statut')
+        ->withTimestamps();
+    }
+
+
+
+
 }

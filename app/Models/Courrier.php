@@ -28,4 +28,11 @@ class Courrier extends Model
         return $this->hasMany(Dossier::class);
     }
 
+
+    public function sousdirections(){
+        return $this->belongsToMany(Sousdirection::class,'courrier_sousdirection','courrier_id','sousdirection_id')
+        ->withPivot('expediteur', 'operation','libelle','service','destinataire','statut')
+        ->withTimestamps();
+    }
+
 }

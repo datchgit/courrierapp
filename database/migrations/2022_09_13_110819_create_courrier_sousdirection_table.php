@@ -24,6 +24,9 @@ class CreateCourrierSousdirectionTable extends Migration
             $table->unsignedBigInteger('destinataire');
             $table->string('statut');
             $table->timestamps();
+
+            $table->foreign('sousdirection_id')->references('id')->on('sousdirections');
+            $table->foreign('courrier_id')->references('id')->on('courriers');
         });
     }
 
