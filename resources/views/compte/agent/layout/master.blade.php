@@ -15,6 +15,7 @@
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('user/assets/css/dashlite.css?ver=3.0.3')}}">
     <link id="skin-default" rel="stylesheet" href="{{asset('user/assets/css/theme.css?ver=3.0.3')}}">
+    @livewireStyles
 </head>
 
 <body class="nk-body  npc-general has-sidebar ">
@@ -229,11 +230,13 @@
     <!-- select region modal -->
    
     <!-- JavaScript -->
+    @livewireScripts
     <script src="{{asset('user/assets/js/bundle.js?ver=3.0.3')}}"></script>
     <script src="{{asset('user/assets/js/scripts.js?ver=3.0.3')}}"></script>
     <script src="{{asset('user/assets/js/charts/chart-hotel.js?ver=3.0.3')}}"></script>
     <script src="{{asset('admin/assets/js/logout.js')}}"></script>
     <script src="{{asset('admin/assets/js/selectservice.js')}}"></script>
+  
 </body>
 
 </html>

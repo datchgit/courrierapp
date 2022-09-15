@@ -37,6 +37,7 @@
                     <div class="card card-bordered card-stretch">
                         <form class="card-inner-group" action="{{route('courrier.selectCourrier')}}"  method="POST">
                             @csrf
+                            <input type="hidden" name="operation" value="envoyer au secretariat">
                             <div class="card-inner position-relative card-tools-toggle">
                                 <div class="card-title-group">
                                     <div class="card-tools">
@@ -188,7 +189,7 @@
                                         </ul><!-- .pagination -->
                                     </div>
                                     <div class="g">
-                                         <input  class="btn btn-light" type="submit" value="Soumettre au sécretariat">
+                                         <input  class="btn btn-light" type="submit" value="Envoyer au secretariat">
                                          <a href="{{route('courrier.registre_enregistrer')}}" class="btn btn-light"> retour</a>
                                     </div><!-- .pagination-goto -->
                                 </div><!-- .nk-block-between -->

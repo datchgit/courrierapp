@@ -234,7 +234,7 @@
                                     </div>
                                     <div class="g">
                                      
-                                         <a href="{{route('courrier_recu_menu')}}" class="btn btn-light"> retour</a>
+                                         <a href="javascript:history.back()" class="btn btn-light"> retour</a>
                                     </div><!-- .pagination-goto -->
                                 </div><!-- .nk-block-between -->
                             </div><!-- .card-inner -->

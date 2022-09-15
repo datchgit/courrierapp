@@ -71,7 +71,8 @@ Route::middleware(['auth'])->group(function () {
 
     /** envoie courrier  */
 
-    Route::post('/compte/admin/ag/courrier/enregistrer/envoi/',[MailController::class,'selectCourrier'])->name('courrier.selectCourrier');
+    Route::any('/compte/admin/ag/courrier/enregistrer/envoi/formulaire',[MailController::class,'selectCourrier'])->name('courrier.selectCourrier');
+    Route::post('/compte/admin/ag/courrier/enregistrer/envoi/',[MailController::class,'send'])->name('courrier.send');
    // Route::get('/compte/admin/ag/courrier/envoi/selection/destinataire/',[MailController::class,'selectdestination'])->name('courrier.envoi.selectdestination');
 
     /*** fin */
