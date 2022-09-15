@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourrierController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SousdirectionController;
 use App\Http\Controllers\UserController;
@@ -54,9 +55,29 @@ Route::middleware(['auth'])->group(function () {
    
     Route::post('/compte/admin/ag/courrier/store',[CourrierController::class,'store'])->name('courrier.store');
 
-    Route::get('/compte/admin/ag/courrier/registre/enregister',[CourrierController::class,'registre_courrier_enregister'])->name('courrier.registre_enregistrer');
+    Route::get('/compte/admin/ag/courrier/registre/enregister/menu',[CourrierController::class,'registre_courrier_enregister_menu'])->name('courrier.registre_enregistrer');
     Route::get('/compte/admin/ag/courrier/registre/enregister/liste',[CourrierController::class,'registre_courrier_enregister_liste'])->name('courrier.registre_enregistrer_liste');
     Route::get('/compte/courrier/detail/{id}',[CourrierController::class,'detail'])->name('courrier.detail');
+
+     
+
+   
+    Route::get('/compte/admin/ag/courrier/boite/reception/menu',function(){
+ 
+            return view('compte.agent.courrier.boite.recu.menu');
+    })->name('courrier_recu_menu');
+
+
+
+    /** envoie courrier  */
+
+    Route::post('/compte/admin/ag/courrier/enregistrer/envoi/',[MailController::class,'selectCourrier'])->name('courrier.selectCourrier');
+   // Route::get('/compte/admin/ag/courrier/envoi/selection/destinataire/',[MailController::class,'selectdestination'])->name('courrier.envoi.selectdestination');
+
+    /*** fin */
+
+    Route::get('/compte/admin/ag/courrier/boite/reception/menu/ajourdhui',[CourrierController::class,'courrier_recu_du_jour'])->name('courrier_du_jour');
+
 });
 
 

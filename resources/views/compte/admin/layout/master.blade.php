@@ -28,7 +28,7 @@
     <link href="{{asset('admin/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="{{asset('admin/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
-
+  
 
 </head>
 
@@ -94,6 +94,8 @@
    
     <script src="{{asset('admin/assets/js/d.js')}}"></script>
     <script src="{{asset('admin/assets/js/logout.js')}}"></script>
+
+    
 </body>
 
 </html>

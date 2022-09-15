@@ -16,12 +16,12 @@ class CourrierController extends Controller
     //
 
     public function registre(){
-        return view('compte.agent.courrier.registre');
+        return view('compte.agent.courrier.registre.registre');
     }
 
 
     public function create(){
-        return view('compte.agent.courrier.register');
+        return view('compte.agent.courrier.enregistrement.register');
     }
 
 
@@ -97,9 +97,9 @@ class CourrierController extends Controller
     }
 
 
-    public function registre_courrier_enregister(){
+    public function registre_courrier_enregister_menu(){
 
-        return view('compte.agent.courrier.registre.enregistrer.enregistrer');
+        return view('compte.agent.courrier.registre.enregistrer.menu');
     }
 
     public function registre_courrier_enregister_liste(){
@@ -117,6 +117,12 @@ class CourrierController extends Controller
         $dossiers = Dossier::where('courrier_id',$id)->paginate(5);
         
         return view('compte.agent.courrier.detail',compact('courrier','dossiers'));
+    }
+
+
+    public function courrier_recu_du_jour(){
+
+        return view('compte.agent.courrier.boite.recu.courrier_du_jour');
     }
 
 }

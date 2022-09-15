@@ -30,7 +30,7 @@
                     </div>
                     <div class="nk-sidebar-brand">
                         <a href="html/hotel/index.html" class="logo-link nk-sidebar-logo">
-                           <h3 class="text-light">Admin</h3>
+                           <h3 class="text-light">App courrier</h3>
                         </a>
                     </div>
                 </div><!-- .nk-sidebar-element -->
@@ -39,9 +39,9 @@
                         <div class="nk-sidebar-menu" data-simplebar>
                             <ul class="nk-menu">
                                 <li class="nk-menu-item">
-                                    <a href="" class="nk-menu-link">
+                                    <a href="{{route('agent.dashboard.home')}}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
-                                        <span class="nk-menu-text">Tableau de bord</span>
+                                        <span class="nk-menu-text"> Acceuil</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item has-sub">
@@ -85,12 +85,12 @@
                                 @else
                                 <li class="nk-menu-item has-sub">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-coins"></em></span>
+                                        <span class="nk-menu-icon"><em class="icon ni ni-mail"></em></span>
                                         <span class="nk-menu-text">Boîte à courrier</span>
                                     </a>
                                     <ul class="nk-menu-sub">
                                         <li class="nk-menu-item">
-                                            <a href="html/hotel/payment-methods.html" class="nk-menu-link"><span class="nk-menu-text">Courriers reçus</span></a>
+                                            <a href="/compte/admin/ag/courrier/boite/reception/menu" class="nk-menu-link"><span class="nk-menu-text">Courriers reçus</span></a>
                                         </li>
                                         <li class="nk-menu-item">
                                             <a href="html/hotel/invoice-list.html" class="nk-menu-link"><span class="nk-menu-text">Courriers reçus</span></a>
@@ -233,6 +233,7 @@
     <script src="{{asset('user/assets/js/scripts.js?ver=3.0.3')}}"></script>
     <script src="{{asset('user/assets/js/charts/chart-hotel.js?ver=3.0.3')}}"></script>
     <script src="{{asset('admin/assets/js/logout.js')}}"></script>
+    <script src="{{asset('admin/assets/js/selectservice.js')}}"></script>
 </body>
 
 </html>

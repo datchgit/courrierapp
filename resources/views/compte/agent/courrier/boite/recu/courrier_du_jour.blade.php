@@ -1,5 +1,4 @@
 @extends('compte.agent.layout.master')
-
 @section('content')
 
 
@@ -10,7 +9,7 @@
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between">
                         <div class="nk-block-head-content">
-                            <h3 class="nk-block-title page-title">Courrier enregistrer du 
+                            <h3 class="nk-block-title page-title">Courrier du jour 
                               
                                <span id="date"> </span>
                             </h3>   
@@ -25,7 +24,7 @@
                                 <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                                 <div class="toggle-expand-content" data-content="pageMenu">
                                     <ul class="nk-block-tools g-3">
-                                        <li><a href="{{route('courrier.create')}}" class="btn btn-white btn-outline-light"><em class="icon ni ni-plus"></em><span>Nouveau courrier</span></a></li>
+                                        <li><a href="http://localhost:8000/compte/admin/ag/courrier/create" class="btn btn-white btn-outline-light"><em class="icon ni ni-plus"></em><span>Liste  courrier</span></a></li>
                                         
                                     </ul>
                                 </div>
@@ -35,9 +34,8 @@
                 </div><!-- .nk-block-head -->
                 <div class="nk-block">
                     <div class="card card-bordered card-stretch">
-                        <form class="card-inner-group" action="{{route('courrier.selectCourrier')}}"  method="POST">
-                            @csrf
-                            <div class="card-inner position-relative card-tools-toggle">
+                        <form class="card-inner-group" action="" method="POST">
+                            <input type="hidden" name="_token" value="T9RHuaKN84OvPzdOqegbcAlVO99K3p4M08d9hx1f">                            <div class="card-inner position-relative card-tools-toggle">
                                 <div class="card-title-group">
                                     <div class="card-tools">
                                         <div class="form-inline flex-nowrap gx-3">
@@ -126,27 +124,26 @@
                                     </div><!-- .nk-tb-item -->
                                  
                                    
-                                    @foreach ($courriers as $c)
-                                   
+                                                                       
                                   
-                                    <div class="nk-tb-item" >
+                                    <div class="nk-tb-item">
                                         <div class="nk-tb-col nk-tb-col-check">
                                             <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                <input type="hidden" value="{{$c->id}}" name="courrier[]">
+                                                <input type="hidden" value="6" name="courrier[]">
                                             </div>
                                         </div>
                                         <div class="nk-tb-col">
-                                            {{$c->nom}}  {{$c->prenom}}
+                                            gangne  romain
                                         </div>
                                         <div class="nk-tb-col tb-col-mb">
-                                            {{$c->numero}}
+                                            1455
                                         </div>
                                         <div class="nk-tb-col tb-col-md">
-                                            {{$c->matricule}}
+                                            827500Z
                                         </div>
                                         <div class="nk-tb-col tb-col-lg">
                                             <ul class="list-status">
-                                               <li class="text-success">{{$c->statut}} </li> 
+                                               <li class="text-success">enregistrer </li> 
                                             </ul>
                                         </div>
                                      
@@ -160,7 +157,7 @@
                                                         <div class="dropdown-menu dropdown-menu-end">
                                                             <ul class="link-list-opt no-bdr">
                                                                 
-                                                                <li><a href="{{route('courrier.detail',$c->id)}}"><em class="icon ni ni-eye"></em><span> Details</span></a></li>
+                                                                <li><a href="http://localhost:8000/compte/courrier/detail/6"><em class="icon ni ni-eye"></em><span> Details</span></a></li>
                                                               
                                                                 <li class="divider"></li>
 
@@ -176,20 +173,68 @@
                                     </div>
                                        
                                   
-                                    @endforeach
+                                                                       
                                   
+                                    <div class="nk-tb-item">
+                                        <div class="nk-tb-col nk-tb-col-check">
+                                            <div class="custom-control custom-control-sm custom-checkbox notext">
+                                                <input type="hidden" value="7" name="courrier[]">
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-col">
+                                            guy  romain pascal
+                                        </div>
+                                        <div class="nk-tb-col tb-col-mb">
+                                            74488
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md">
+                                            agcouvvvrrier
+                                        </div>
+                                        <div class="nk-tb-col tb-col-lg">
+                                            <ul class="list-status">
+                                               <li class="text-success">enregistrer </li> 
+                                            </ul>
+                                        </div>
+                                     
+                                  
+                                        <div class="nk-tb-col nk-tb-col-tools">
+                                            <ul class="nk-tb-actions gx-1">
+                                             
+                                                <li>
+                                                    <div class="drodown">
+                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <ul class="link-list-opt no-bdr">
+                                                                
+                                                                <li><a href="http://localhost:8000/compte/courrier/detail/7"><em class="icon ni ni-eye"></em><span> Details</span></a></li>
+                                                              
+                                                                <li class="divider"></li>
+
+                                                                <li><a href="#"><em class="icon ni ni-focus"></em><span>supprimer</span></a></li>
+                                                             
+                                                              
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                       
+                                  
+                                                                      
                                 </div><!-- .nk-tb-list -->
                             </div><!-- .card-inner -->
                             <div class="card-inner">
                                 <div class="nk-block-between-md g-3">
                                     <div class="g">
                                         <ul class="pagination justify-content-center justify-content-md-start">
-                                          {{$courriers->links()}}
+                                          
                                         </ul><!-- .pagination -->
                                     </div>
                                     <div class="g">
-                                         <input  class="btn btn-light" type="submit" value="Soumettre au sécretariat">
-                                         <a href="{{route('courrier.registre_enregistrer')}}" class="btn btn-light"> retour</a>
+                                     
+                                         <a href="{{route('courrier_recu_menu')}}" class="btn btn-light"> retour</a>
                                     </div><!-- .pagination-goto -->
                                 </div><!-- .nk-block-between -->
                             </div><!-- .card-inner -->

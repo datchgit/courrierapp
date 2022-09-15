@@ -28,9 +28,9 @@
 
     <body>
 
-        <div class="auth-page-wrapper pt-5">
+        <div class="auth-page-wrapper pt-5 ">
             <!-- auth page bg -->
-            <div class="auth-one-bg-position auth-one-bg"  >
+            <div class="auth-one-bg-position auth-one-bg "  id="auth-particles"  >
                 <div class="bg-overlay"></div>
                 
                 <div class="shape">
@@ -48,7 +48,7 @@
                             <div class="text-center mt-sm-5 mb-4 text-white-50">
                                 <div>
                                     <a href="index.html" class="d-inline-block auth-logo">
-                                        <h1 class="text-light">Espace de connexion </h1>
+                                        <h1 class="text-light" style="font-weight: 700 ; text-transform:uppercase">Service courrier drh</h1>
                                     </a>
                                 </div>
                               

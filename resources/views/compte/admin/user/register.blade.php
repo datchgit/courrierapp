@@ -95,6 +95,7 @@
                                         <option>  </option>
                                         <option value="agent">Agent</option>
                                         <option value="chef">Chef de service</option>
+                                        <option value="secretaire">Secretaire</option>
                                         <option value="sous_directeur">Sous directeur</option>
                                     </select>
                                 </div>

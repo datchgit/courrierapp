@@ -19,7 +19,7 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
 
 
 
-Broadcast::channel('input.mail.{id}' , function($user ,$id){
+Broadcast::channel('private.mail.{id}' , function($user ,$id){
 
-    return false ;
+    return true ;
 });

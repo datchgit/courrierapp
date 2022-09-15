@@ -17,10 +17,10 @@
                     <div class="row g-gs">
 
                        <ul>
-                        <li> <a href="{{route('courrier.registre_enregistrer_liste')}}">nouveau courrier  (4)</a> </li> 
+                        <li> <a href="">nouveau courrier  (4)</a> </li> 
                         <br>
                         
-                        <li> <a href="">liste courrier (4)</a> </li>   
+                        <li> <a href="{{route('courrier.registre_enregistrer_liste')}}">liste courrier (4)</a> </li>   
                     </ul>                   
                     </div>
                 </div><!-- .nk-block -->
