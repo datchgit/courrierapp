@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Dossier;
 use App\Models\Courrier;
+use App\Models\Sousdirection;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
@@ -122,6 +123,20 @@ class CourrierController extends Controller
 
     public function courrier_recu_du_jour(){
 
+        
+        $sousdirections = Sousdirection::all();
+        $courriers = [];
+        foreach($sousdirections as $s){
+            foreach($s->courriers as $c){
+              
+                 if($c->pivot->destinataire==Auth::user()->id){ 
+                    array_push($courriers,$c);
+                 };
+            }
+        }
+
+        dd($courriers);
+       
         return view('compte.agent.courrier.boite.recu.courrier_du_jour');
     }
 

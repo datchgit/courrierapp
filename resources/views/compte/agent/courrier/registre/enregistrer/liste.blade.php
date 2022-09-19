@@ -17,7 +17,7 @@
                             
                            
                             <div class="nk-block-des text-soft">
-                                <p>totale 44xx courrier.</p>
+                                <h6>total courriers  :  {{count($courriers)}}.</h6>
                             </div>
                         </div><!-- .nk-block-head-content -->
                         <div class="nk-block-head-content">
@@ -86,7 +86,9 @@
                                                
                                             </div>
                                         </div>
-                                        <div class="nk-tb-col"><span class="sub-text">Expéditeur</span></div>
+                                        <div class="nk-tb-col"><span class="sub-text">
+                                      
+                                        Expéditeur</span></div>
                                         <div class="nk-tb-col tb-col-mb"><span class="sub-text">Numero</span></div>
                                         <div class="nk-tb-col tb-col-md"><span class="sub-text">Matricule</span></div>
                                         <div class="nk-tb-col tb-col-lg"><span class="sub-text">statut</span></div>
@@ -94,34 +96,7 @@
                                       
                                         <div class="nk-tb-col nk-tb-col-tools text-end">
                                             <div class="dropdown">
-                                                <a href="#" class="btn btn-xs btn-outline-light btn-icon dropdown-toggle" data-bs-toggle="dropdown" data-offset="0,5"><em class="icon ni ni-plus"></em></a>
-                                                <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end">
-                                                    <ul class="link-tidy sm no-bdr">
-                                                        <li>
-                                                            <div class="custom-control custom-control-sm custom-checkbox checked">
-                                                                <input type="checkbox" class="custom-control-input" checked="" id="bl">
-                                                                <label class="custom-control-label" for="bl">Balance</label>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="custom-control custom-control-sm custom-checkbox checked">
-                                                                <input type="checkbox" class="custom-control-input" checked="" id="ph">
-                                                                <label class="custom-control-label" for="ph">Phone</label>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="custom-control custom-control-sm custom-checkbox">
-                                                               
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="custom-control custom-control-sm custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="st">
-                                                                <label class="custom-control-label" for="st">Status</label>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                              
                                             </div>
                                         </div>
                                     </div><!-- .nk-tb-item -->
@@ -133,7 +108,7 @@
                                     <div class="nk-tb-item" >
                                         <div class="nk-tb-col nk-tb-col-check">
                                             <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                <input type="hidden" value="{{$c->id}}" name="courrier[]">
+                                                <input type="checkbox" value="{{$c->id}}" name="courrier[]">
                                             </div>
                                         </div>
                                         <div class="nk-tb-col">
@@ -189,8 +164,10 @@
                                         </ul><!-- .pagination -->
                                     </div>
                                     <div class="g">
-                                         <input  class="btn btn-light" type="submit" value="Envoyer au secretariat">
-                                         <a href="{{route('courrier.registre_enregistrer')}}" class="btn btn-light"> retour</a>
+                                          
+                                         <input type="checkbox" name="" id="send_all"> <label for="" id="labelinputsendall">Tout sélectionner</label>   
+                                         <input  class="btn btn-light" type="submit" value="Envoyer">
+                                         <a href="javascript:history.back()" class="btn btn-light"> retour</a>
                                     </div><!-- .pagination-goto -->
                                 </div><!-- .nk-block-between -->
                             </div><!-- .card-inner -->
@@ -201,5 +178,9 @@
         </div>
     </div>
 </div>
+
+<script src="{{asset('user/assets/js/sendall.js')}}">
+
+</script>
 
 @endsection

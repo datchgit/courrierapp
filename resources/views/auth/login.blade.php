@@ -82,7 +82,7 @@
                                                 <div class="float-end">
                                                     <a href="auth-pass-reset-basic.html" class="text-muted">Mot de passe oubliez ?</a>
                                                 </div>
-                                                <label class="form-label" for="password-input">Mot de passe
+                                                <label class="form-label" for="password-input">Mot de passe : ( 8 charactères )
                                                     @error('password')
                                                        <small class="text-danger">{{$message}}</small> 
                                                     @enderror
@@ -125,7 +125,7 @@
         </div>
         <!-- end auth-page-wrapper -->
 
-        <!-- JAVASCRIPT -->
+     
         <script src="{{asset('admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('admin/assets/libs/simplebar/simplebar.min.js')}}"></script>
         <script src="{{asset('admin/assets/libs/node-waves/waves.min.js')}}"></script>
@@ -139,6 +139,7 @@
         <script src="{{asset('admin/assets/js/pages/particles.app.js')}}"></script>
         <!-- password-addon init -->
         <script src="{{asset('admin/assets/js/pages/password-addon.init.js')}}"></script>
+       
     </body>
 
 </html>

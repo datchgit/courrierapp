@@ -88,6 +88,7 @@ Route::get('/sendmail',function(){
     return null;
 });
 */
+/*
 Route::get('/ws',function(){
     return view('app');
 });
@@ -96,16 +97,11 @@ Route::get('/wi',function(){
     return view('inpute');
 });
 
-
+/*
 Route::post('/chat-message',function(\Illuminate\Http\Request $request){
     event(new \App\Events\SendMailsEvent($request->message));
     return null;
 });
-
-
-Route::post('/inpute',function(\Illuminate\Http\Request $request){
-    event(new \App\Events\SendMailsEvent($request->message));
-    return null;
-});
+*/
 
 

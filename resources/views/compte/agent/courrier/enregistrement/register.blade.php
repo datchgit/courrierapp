@@ -32,7 +32,7 @@
                              
                                @csrf 
                               
-                                <div class="col-md-6 col-lg-4 col-xxl-3">
+                                <div class="col-md-6 col-lg-6 col-xxl-3">
                                     <div class="form-group">
                                         <label class="form-label" for="first-name">Nom expéditeur
                                           
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                                 <!--col-->
-                                <div class="col-md-6 col-lg-4 col-xxl-3">
+                                <div class="col-md-6 col-lg-6 col-xxl-3">
                                     <div class="form-group">
                                         <label class="form-label" for="last-name">Prénom expéditeur
                                             @error('prenom')
@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                                 <!--col-->
-                                <div class="col-md-6 col-lg-4 col-xxl-3">
+                                <div class="col-md-6 col-lg-6 col-xxl-3">
                                     <div class="form-group">
                                         <label class="form-label">Objet courrier
                                             @error('objet')
@@ -65,7 +65,7 @@
                                         <input type="text" class="form-control" id="last-name"  name="objet" value="{{old('objet')}}">
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4 col-xxl-3">
+                                <div class="col-md-6 col-lg-6 col-xxl-3">
                                     <div class="form-group">
                                         <label class="form-label" for="phone-no">Matricule expéditeur
                                             @error('matricule')
@@ -78,7 +78,7 @@
                                 <!--col-->
                              
                                 <!--col-->
-                                <div class="col-md-6 col-lg-4 col-xxl-3">
+                                <div class="col-md-6 col-lg-6 col-xxl-3">
                                     <div class="form-group">
                                         <label class="form-label" for="address">Numéro d'enregistrement 
                                             @error('numero')
@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                                 <!--col-->
-                                <div class="col-md-6 col-lg-4 col-xxl-3">
+                                <div class="col-md-6 col-lg-6 col-xxl-3">
                                     <div class="form-group">
                                         <label class="form-label">Uploader les documents joints </label>
                                         <div class="form-control-wrap">
@@ -105,18 +105,9 @@
                                 <!--col-->
                                
                                 <!--col-->
-                                <div class="col-md-12">
-                                    <div class="upload-zone dropzone dz-clickable dz-started" data-max-files="1">
-                                        <div class="dz-message" data-dz-message="">
-                                            <span class="dz-message-text">Drag and drop file</span>
-                                            <span class="dz-message-or">or</span>
-                                            <button class="btn btn-primary">SELECT</button>
-                                        </div>
-                                    </div>
-                                </div>
-
+                              
                                      <!--col-->
-                                     <div class="col-md-6 col-lg-4 col-xxl-3">
+                                     <div class="col-md-6 col-lg-6 col-xxl-3">
                                         <div class="form-group">
                                             <label class="form-label" for="address">Enregistrer par  : {{Auth::user()->nom}}  {{Auth::user()->prenom}}</label>
                                             <input type="hidden" class="form-control" id="address" value="{{Auth::user()->id}}" name="agent" >

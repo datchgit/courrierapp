@@ -21,7 +21,7 @@
    
         <input type="text" id="input-message">
     </form>
-    <script src="{{mix('js/app.js')}}"></script>
+  
 
 </body>
 </html>

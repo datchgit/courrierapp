@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\SendMailsEvent;
+use App\Models\Courrier;
 use App\Models\Service;
 use App\Models\Sousdirection;
 use Illuminate\Http\Request;
@@ -15,22 +17,11 @@ class MailController extends Controller
     //
 
 
-
-
-
-
     public function selectCourrier(Request $request){
        
        $operation = $request->input('operation');
        $courriers_list = $request->input('courrier');
-
-     
-      /* $courriers_list =[];
-       foreach($courriers_posters as $c){
-        array_push($courriers_list,DB::select('select * from courriers where id = ?' ,$courriers_posters));
-       }
-       */
-      
+   
        return view('compte.agent.courrier.selectdestinaireform.selectdestinaire',compact('courriers_list','operation')) ;
        //return redirect()->route('courrier.envoi.selectdestination',['courrier'=>$courriers_list]);      
     }
@@ -54,7 +45,8 @@ class MailController extends Controller
 
         $envoies = null;
 
-     
+
+      
         //sousdirection_id	courrier_id	expediteur	operation	libelle	service	destinataire	statut
         
         Validator::make($inputs,[
@@ -65,15 +57,13 @@ class MailController extends Controller
 
 
       
+
+     
        
         foreach($inputs['courriers'] as $c){
-            
-         
-          
-          
+
             foreach($inputs['destinataire'] as $d){
-                $sousdirection = Sousdirection::where('id',$inputs['sousdirection'])->get();
-                dd($d);  
+                $sousdirection = Sousdirection::where('id',$inputs['sousdirection'])->first(); 
                $envoies = $sousdirection->courriers()->attach($c,[
                     'expediteur'=>Auth::user()->id,
                      'operation'=>$inputs['operation'],
@@ -82,31 +72,35 @@ class MailController extends Controller
                      'destinataire'=>$d,
                      'statut'=>$inputs['operation'],
                 ]); 
+
               
+                Courrier::where('id',$c)->update([
+                   'statut'=>$inputs['operation']
+                ]);    
             };
 
           
         };
-
+        
+        
+        
+       new SendMailsEvent();
 
    
 
 
         if($inputs['operation']==strtolower('Envoyer au secretariat')){
-            Alert::success('Envoie de courrier ' , " Envoyer avec succès");
+            Alert::toast(" Envoyer avec succès",'success');
             return redirect()->route('courrier.registre');
         }else{
-            Alert::success('Envoie de courrier ' , " Envoyer avec succès");
+            Alert::toast(" Envoyer avec succès",'success');
             return redirect()->route('courrier_recu_menu');
         };
        
-        
-
-
-      
-
-
     }
+
+
+
 
 
 }

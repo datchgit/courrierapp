@@ -30,6 +30,10 @@ class AuthServiceProvider extends ServiceProvider
             return strtolower($user->service->nom) == 'service courrier';
         });
 
+        Gate::define('is_admin', function (User $user) {
+            return strtolower($user->role->nom) == 'super-admin';
+        });
+
         
         //
     }

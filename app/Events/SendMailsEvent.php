@@ -20,11 +20,11 @@ class SendMailsEvent implements ShouldBroadcast
      * @return void
      */
 
-    public $message ='';
+  //  public $message ='';
 
-    public function __construct(string $message)
+    public function __construct()
     {
-        $this->message = $message ;
+      //  $this->message = $message ;
         //
     }
 
@@ -47,7 +47,7 @@ class SendMailsEvent implements ShouldBroadcast
     public function broadcastWith()
     {
         return [
-            'message'=>$this->message
+            'message'=>'courriers envoyés'
         ];
     }
 }
