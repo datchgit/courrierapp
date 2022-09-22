@@ -13,14 +13,8 @@
                 <strong> {{session('add')}} </strong> 
             </div>
         </div>
-        @elseif(Session::get('delete'))
-        <div class="row">
-            <div class="col">
-                <!-- success Alert -->
-            <div class="alert alert-danger" role="alert">
-                <strong> {{session('delete')}} </strong> 
-            </div>
-        </div>
+        
+     
         @elseif(Session::get('update'))
         <div class="row">
             <div class="col">
@@ -120,7 +114,7 @@
                                                     <td>
                                                         <div class="hstack gap-3 flex-wrap">
                                                             <a href="javascript:void(0);" class="link-success fs-15" data-bs-toggle="modal" data-bs-target="#varyingcontentModal{{$sd->id}}" data-bs-whatever="@getbootstrap"><i class="ri-edit-2-line"></i></a>
-                                                            <a href="{{route('sd.delete',$sd->id)}}" class="link-danger fs-15"><i class="ri-delete-bin-line"></i></a>
+                                                           
 
                                                             <!-- Varying Modal Content -->
                                                           

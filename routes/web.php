@@ -34,14 +34,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/compte/admin/sd',[SousdirectionController::class,'index'])->name('sd.list');
         Route::post('/compte/admin/sd/register',[SousdirectionController::class,'store'])->name('sd.register');
         Route::post('/compte/admin/sd/update',[SousdirectionController::class,'update'])->name('sd.update');
-        Route::get('/compte/admin/sd/delete/{id}',[SousdirectionController::class,'destroy'])->name('sd.delete');
+        //Route::get('/compte/admin/sd/delete/{id}',[SousdirectionController::class,'destroy'])->name('sd.delete');
     
     
     
         Route::get('/compte/admin/sv',[ServiceController::class,'index'])->name('sv.list');
         Route::post('/compte/admin/sv/register',[ServiceController::class,'store'])->name('sv.register');
         Route::post('/compte/admin/sv/update',[ServiceController::class,'update'])->name('sv.update');
-        Route::get('/compte/admin/sv/delete/{id}',[ServiceController::class,'destroy'])->name('sv.delete');
+       // Route::get('/compte/admin/sv/delete/{id}',[ServiceController::class,'destroy'])->name('sv.delete');
     
     });
    
@@ -55,29 +55,32 @@ Route::middleware(['auth'])->group(function () {
    
     Route::post('/compte/admin/ag/courrier/store',[CourrierController::class,'store'])->name('courrier.store');
 
-    Route::get('/compte/admin/ag/courrier/registre/enregister/menu',[CourrierController::class,'registre_courrier_enregister_menu'])->name('courrier.registre_enregistrer');
-    Route::get('/compte/admin/ag/courrier/registre/enregister/liste',[CourrierController::class,'registre_courrier_enregister_liste'])->name('courrier.registre_enregistrer_liste');
+    Route::get('/compte/admin/ag/courrier/registre/enregister/liste',[CourrierController::class,'registre_courrier_enregister'])->name('courrier.registre_enregistrer');
+  //Route::get('/compte/admin/ag/courrier/registre/enregister/liste',[CourrierController::class,'registre_courrier_enregister_liste'])->name('courrier.registre_enregistrer_liste');
     Route::get('/compte/courrier/detail/{id}',[CourrierController::class,'detail'])->name('courrier.detail');
 
      
 
    
-    Route::get('/compte/admin/ag/courrier/boite/reception/menu',function(){
+    Route::get('/compte/admin/ag/courrier/boite/reception/secretariat/menu',function(){
  
-            return view('compte.agent.courrier.boite.recu.menu');
-    })->name('courrier_recu_menu');
+            return view('compte.agent.courrier.boite.recu.secretariat.menu');
+    })->name('courrier_recu_secretariat_menu');
 
 
 
     /** envoie courrier  */
-
+    
+    Route::post('/compte/admin/ag/courrier/enregistrer/envoi/secretariat',[MailController::class,'sendToSecretariat'])->name('courrier.sendToSecretariat');
     Route::any('/compte/admin/ag/courrier/enregistrer/envoi/formulaire',[MailController::class,'selectCourrier'])->name('courrier.selectCourrier');
     Route::post('/compte/admin/ag/courrier/enregistrer/envoi/',[MailController::class,'send'])->name('courrier.send');
-   // Route::get('/compte/admin/ag/courrier/envoi/selection/destinataire/',[MailController::class,'selectdestination'])->name('courrier.envoi.selectdestination');
+    Route::get('/compte/admin/ag/courrier/envoi/selection/destinataire/',[MailController::class,'selectdestination'])->name('courrier.envoi.selectdestination');
+    Route::get('/sousdirection/services/{id}',[MailController::class,'getServices']);
+    Route::get('/sousdirection/agents/{id}',[MailController::class,'getAgents']);
 
     /*** fin */
 
-    Route::get('/compte/admin/ag/courrier/boite/reception/menu/ajourdhui',[CourrierController::class,'courrier_recu_du_jour'])->name('courrier_du_jour');
+    Route::get('/compte/admin/ag/courrier/boite/reception/secretariat/menu/ajourdhui',[CourrierController::class,'courrier_recu_secretariat'])->name('courrier_recu_secretariat');
 
 });
 

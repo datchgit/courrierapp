@@ -13,14 +13,7 @@
                 <strong> {{session('add')}} </strong> 
             </div>
         </div>
-        @elseif(Session::get('delete'))
-        <div class="row">
-            <div class="col">
-                <!-- success Alert -->
-            <div class="alert alert-danger" role="alert">
-                <strong> {{session('delete')}} </strong> 
-            </div>
-        </div>
+      
         @elseif(Session::get('update'))
         <div class="row">
             <div class="col">
@@ -85,7 +78,7 @@
                                                     <div class="mb-3">
                                                        
                                                             <select name="sous_direction" class="form-select mb-3" aria-label="Default select example">
-                                                                <option selected>Sous-direction</option>
+                                                                <option value="">Sous-direction</option>
                                                                @foreach ($sds as $sd)
                                                                    <option value="{{$sd->id}}">{{$sd->nom}}</option>
                                                                @endforeach
@@ -131,7 +124,7 @@
                                                     <td>
                                                         <div class="hstack gap-3 flex-wrap">
                                                             <a href="javascript:void(0);" class="link-success fs-15" data-bs-toggle="modal" data-bs-target="#varyingcontentModal{{$sv->id}}" data-bs-whatever="@getbootstrap"><i class="ri-edit-2-line"></i></a>
-                                                            <a href="{{route('sv.delete',$sv->id)}}" class="link-danger fs-15"><i class="ri-delete-bin-line"></i></a>
+                                                           
 
                                                             <!-- Varying Modal Content -->
 

@@ -26,7 +26,6 @@ const channel = Echo.channel('public.sendMails.1');
 channel.subscribed(()=>{
     console.log('subcribed');
 }).listen('.send-mails',(event)=>{
-    console.log(event);
    /* const t = document.createElement('li');
     t.textContent = event.message;
     

@@ -18,7 +18,9 @@ class CreateDossiersTable extends Migration
             $table->string('contenu');
             $table->unsignedBigInteger('courrier_id');
             $table->timestamps();
-            $table->foreign('courrier_id')->references('id')->on('courriers');
+            $table->foreign('courrier_id')->references('id')->on('courriers')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 

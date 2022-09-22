@@ -6,6 +6,7 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Models\Poste;
 use App\Models\Role;
 use App\Models\Service;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -41,10 +42,10 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::registerView(function(){
 
             $services = Service::all();
-            $roles = Role::all();
+            $postes = Poste::all();
             return view('compte.admin.user.register',[
                 'svs'=>$services,
-                'roles'=>$roles
+                'postes'=>$postes
             ]);
         });
 

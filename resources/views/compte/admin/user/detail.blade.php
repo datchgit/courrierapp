@@ -70,7 +70,7 @@
 
                                             <tr>
                                                 <th class="ps-0" scope="row">Rôle </th>
-                                                <td class="text-muted">{{$user->role->nom}}</td>
+                                                <td class="text-muted">{{$user->poste->role->nom}}</td>
                                             </tr>
 
                                             <tr>

@@ -31,7 +31,11 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('is_admin', function (User $user) {
-            return strtolower($user->role->nom) == 'super-admin';
+            return strtolower($user->poste->role->nom) == 'super-admin';
+        });
+
+        Gate::define('is_secretariat_drh', function (User $user) {
+            return strtolower($user->poste->nom) == strtolower('secretaire drh') && strtoupper($user->service->nom) == strtoupper('SECRETARIAT');
         });
 
         

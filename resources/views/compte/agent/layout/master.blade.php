@@ -89,15 +89,15 @@
                                         <span class="nk-menu-icon"><em class="icon ni ni-mail"></em></span>
                                         <span class="nk-menu-text">Boîte à courrier</span>
                                     </a>
+                                    @can('is_secretariat_drh')
                                     <ul class="nk-menu-sub">
                                         <li class="nk-menu-item">
-                                            <a href="/compte/admin/ag/courrier/boite/reception/menu" class="nk-menu-link"><span class="nk-menu-text">Courriers reçus</span></a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/hotel/invoice-list.html" class="nk-menu-link"><span class="nk-menu-text">Courriers reçus</span></a>
-                                        </li>
-                                       
+                                            <a href="/compte/admin/ag/courrier/boite/reception/secretariat/menu" class="nk-menu-link"><span class="nk-menu-text">Menu</span></a>
+                                        </li>    
                                     </ul>
+                                    
+                                    @endcan
+                                  
                                 </li><!-- .nk-menu-item -->
                                 
                                 @endcan
@@ -167,7 +167,7 @@
                                                     <em class="icon ni ni-user-alt"></em>
                                                 </div>
                                                 <div class="user-info d-none d-md-block">
-                                                    <div class="user-status"> {{Auth::user()->role->nom}}</div>
+                                                    <div class="user-status"> {{Auth::user()->poste->role->nom}}</div>
                                                     <div class="user-name dropdown-indicator"> {{Auth::user()->nom}}</div>
                                                 </div>
                                             </div>
@@ -231,12 +231,14 @@
    
     <!-- JavaScript -->
     @livewireScripts
+
+    @include('sweetalert::alert')
+    <script src="{{mix('js/app.js')}}"></script>
     <script src="{{asset('user/assets/js/bundle.js?ver=3.0.3')}}"></script>
     <script src="{{asset('user/assets/js/scripts.js?ver=3.0.3')}}"></script>
     <script src="{{asset('user/assets/js/charts/chart-hotel.js?ver=3.0.3')}}"></script>
     <script src="{{asset('admin/assets/js/logout.js')}}"></script>
-    <script src="{{asset('admin/assets/js/selectservice.js')}}"></script>
-  
+   
 </body>
 
 </html>

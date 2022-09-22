@@ -119,6 +119,8 @@ class SousdirectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     /*
     public function destroy($id)
     {
         //
@@ -135,7 +137,7 @@ class SousdirectionController extends Controller
            }else{
             Alert::error('Erreur ', 'Suppression  échouée');
            }
-        */
+        *//*
            if($sd){
             return redirect()->route('sd.list')->with('delete','Supprimer avec succès');
            }
@@ -143,4 +145,5 @@ class SousdirectionController extends Controller
 
 
     }
+    */
 }

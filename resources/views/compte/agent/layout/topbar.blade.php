@@ -65,7 +65,7 @@
                             <em class="icon ni ni-user-alt"></em>
                         </div>
                         <div class="user-info d-none d-md-block">
-                            <div class="user-status">{{Auth::user()->role->nom}}</div>
+                            <div class="user-status">{{Auth::user()->poste->role->nom}}</div>
                             <div class="user-name dropdown-indicator">{{Auth::user()->nom}} {{Auth::user()->prenom}}</div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                             </div>
                             <div class="user-info">
                                 <span class="lead-text">{{Auth::user()->nom}} {{Auth::user()->prenom}}</span>
-                                <span class="sub-text">{{Auth::user()->role->nom}}</span>
+                                <span class="sub-text">{{Auth::user()->poste->role->nom}}</span>
                             </div>
                         </div>
                     </div>

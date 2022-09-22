@@ -51,7 +51,7 @@
                             </div><!--end col-->
                             <div class="col-6">
                                 <div class="mb-3">
-                                    <label for="phonenumberInput" class="form-label">Mot de passe
+                                    <label for="phonenumberInput" class="form-label">Mot de passe (8 caractères minimum)
                                         @error('password')
                                         <small class="text-danger">{{$message}}</small>      
                                         @enderror
@@ -93,10 +93,11 @@
                                     </label>
                                     <select  class="form-select"  name="fonction">
                                         <option>  </option>
-                                        <option value="agent">Agent</option>
-                                        <option value="chef">Chef de service</option>
-                                        <option value="secretaire">Secretaire</option>
-                                        <option value="sous_directeur">Sous directeur</option>
+                                        @foreach ($postes as $p)
+                                        <option value="{{$p->id}}">{{$p->nom}}</option>      
+                                        @endforeach
+                                      
+                                       
                                     </select>
                                 </div>
                             </div><!--end col-->
@@ -115,25 +116,7 @@
                                 </div>
                             </div><!--end col-->
 
-                            <div class="col-lg-12">
-                                <!-- Base Radios -->
-
-                                  <label for="">Attribuer un Rôle
-                                   @error("role")
-                                       <small class="text-danger">{{$message}}</small>
-                                   @enderror
-                                  </label>
-                                    @foreach ($roles as $r)
-                                    <div class="form-check mb-2">
-                                        <input class="form-check-input" value="{{$r->id}}" type="radio" name="role" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                           {{$r->nom}}
-                                        </label>
-                                    </div>        
-                                    @endforeach
-                                
-                            </div>
-                          
+                      
                             <div class="col-lg-12">
                                 <div class="text-end">
                                     <button type="submit" class="btn btn-primary">Soumettre</button>

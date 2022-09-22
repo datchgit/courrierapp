@@ -131,7 +131,11 @@ class ServiceController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * 
+     * 
      */
+
+     /*
     public function destroy($id)
     {
         //
@@ -140,12 +144,12 @@ class ServiceController extends Controller
         ->update(['service_id'=>NULL]);
         */
       
-        
+       /* 
         $sd= DB::table('services')->delete($id);
 
         
           
            return redirect()->route('sv.list')->with('delete','Supprimer avec succès');
 
-    }
+    }*/
 }

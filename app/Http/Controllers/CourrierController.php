@@ -98,16 +98,14 @@ class CourrierController extends Controller
     }
 
 
-    public function registre_courrier_enregister_menu(){
-
-        return view('compte.agent.courrier.registre.enregistrer.menu');
+    public function registre_courrier_enregister(){
+        $courriers = Courrier::where('statut','enregistrer')
+        ->orderByDesc('created_at')
+        ->paginate(10);
+        return view('compte.agent.courrier.registre.enregistrer.liste',compact('courriers'));
     }
 
-    public function registre_courrier_enregister_liste(){
-
-        $courriers = Courrier::where('statut','enregistrer')->paginate(10);
-        return view('compte.agent.courrier.registre.enregistrer.liste' , compact('courriers'));
-    }
+   
 
     /**/
 
@@ -121,23 +119,30 @@ class CourrierController extends Controller
     }
 
 
-    public function courrier_recu_du_jour(){
-
-        
+    public function courrier_recu_secretariat(){        
         $sousdirections = Sousdirection::all();
         $courriers = [];
         foreach($sousdirections as $s){
             foreach($s->courriers as $c){
-              
-                 if($c->pivot->destinataire==Auth::user()->id){ 
-                    array_push($courriers,$c);
-                 };
+                 if($c->statut=="envoyer au secretariat"){
+                    if($c->pivot->destinataire==Auth::user()->id){ 
+                        array_push($courriers,$c);
+                     };
+                 } 
+               
             }
         }
 
-        dd($courriers);
+     
+        if(!empty($courriers)){
+            Alert::toast('Courrier(s) reçu(s)','info');
+        }else{
+
+
+        }
+      
        
-        return view('compte.agent.courrier.boite.recu.courrier_du_jour');
+        return view('compte.agent.courrier.boite.recu.secretariat.courrier_du_jour',compact('courriers'));
     }
 
 }

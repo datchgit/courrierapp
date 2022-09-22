@@ -22,10 +22,9 @@ class User extends Authenticatable
         'prenom',
         'matricule',
         'password',
-        'fonction',
         'signature',
         'service_id',      
-        'role_id'
+        'poste_id'
     ];
 
     /**
@@ -51,8 +50,8 @@ class User extends Authenticatable
        return $this->belongsTo(Service::class);
     }
 
-    public function role(){
-        return $this->belongsTo(Role::class);
+    public function poste(){
+        return $this->belongsTo(Poste::class);
     }
 
 

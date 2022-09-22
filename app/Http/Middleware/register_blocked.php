@@ -17,7 +17,7 @@ class register_blocked
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->role->nom !='super-admin'){
+        if(Auth::user()->poste->role->nom !='super-admin'){
             return redirect()->back();
         }
         return $next($request);

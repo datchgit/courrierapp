@@ -1,3 +1,4 @@
+
 @extends('compte.agent.layout.master')
 @section('content')
 
@@ -16,7 +17,7 @@
                                 <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                                 <div class="toggle-expand-content" data-content="pageMenu">
                                     <ul class="nk-block-tools g-3">
-                                        <li><a href="{{route('courrier.registre_enregistrer_liste')}}" class="btn btn-white btn-outline-light"><em class="icon ni ni-plus"></em><span>Liste Nouveau courrier enregistrer</span></a></li>
+                                        <li><a href="{{route('courrier.registre_enregistrer')}}" class="btn btn-white btn-outline-light"><em class="icon ni ni-plus"></em><span>Liste Nouveau courrier enregistrer</span></a></li>
                                         
                                     </ul>
                                 </div>

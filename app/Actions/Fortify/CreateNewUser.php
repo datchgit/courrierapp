@@ -34,7 +34,6 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
             'fonction'=> ['required'],
             'service'=> ['required'],
-            'role'=>['required'],
             'signature'=>['required', Rule::unique(User::class)]
         ])->validate();
 
@@ -60,10 +59,9 @@ class CreateNewUser implements CreatesNewUsers
             'prenom' => $input['prenom'],
             'matricule' => $input['matricule'],
             'password' => Hash::make($input['password']),
-            'fonction' => $input['fonction'],
             'signature' => $image_name,
             'service_id'=>$input['service'],
-            'role_id'=>$input['role']
+            'poste_id'=>$input['fonction'],
         ]);
 
         Alert::success('Creation utilisateur'.' '.$input['nom'].' '.$input['prenom'],'inscription réussie');

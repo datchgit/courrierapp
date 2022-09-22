@@ -29,7 +29,7 @@
     <!-- custom Css-->
     <link href="{{asset('admin/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css"/>
     
-    <script src="{{mix('js/app.js')}}"></script>
+   
 
 </head>
 
@@ -70,6 +70,7 @@
 
   
     <!-- JAVASCRIPT -->
+    <script src="{{mix('js/app.js')}}"></script>
     <script src="{{asset('admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('admin/assets/libs/simplebar/simplebar.min.js')}}"></script>
     <script src="{{asset('admin/assets/libs/node-waves/waves.min.js')}}"></script>
